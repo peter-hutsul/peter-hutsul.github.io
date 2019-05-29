@@ -234,6 +234,7 @@ var ExchangeManager = (function() {
         },
         adDapiVisibleCallback: function() {
             if (dapi.isViewable()) {
+                dapi.removeEventListener("viewableChange", exchangeLib.adDapiVisibleCallback); 
                 setTimeout(function() {
                     dapi.addEventListener("audioVolumeChange", exchangeLib.audioVolumeChangeCallback);
                     GameIndex.init();
